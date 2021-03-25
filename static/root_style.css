@@ -1,0 +1,7 @@
+.title {
+    font-family: "SF Pro Text", Arial;
+}
+
+.link:visited {
+    color: blue !important;
+}
