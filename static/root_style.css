@@ -5,3 +5,7 @@
 .link:visited {
     color: blue !important;
 }
+
+.main {
+    text-align: center;
+}

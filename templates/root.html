@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ domain }} Doesn't Exists</title>
+    {% if dark %}
     <meta name="color-scheme" content="dark light">
+    {% endif %}
     <link rel="stylesheet" href="/static/root_style.css" >
 </head>
 <body>
-<div align="center">
+<div class="main">
     <h1 class="title">Here is your non-existing domain:<br></h1>
     <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="blank" class="link">{{ domain }}</a><br>
 </div>

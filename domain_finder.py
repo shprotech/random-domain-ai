@@ -1,5 +1,5 @@
 """
-Creator: shaharmelamed
+Author: shaharmelamed
 Date: 3/25/21
 Description: Find a non-existing domain.
 """

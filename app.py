@@ -1,13 +1,22 @@
 # -*- coding: utf-8 -*-
+"""
+Author: shaharmelamed
+Created: 3/25/2021
+Description: The main app.
+"""
+# ----- Imports ----- #
 
 import http
 
-import jinja2
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 import domain_finder
 
+# ----- Globals ----- #
+
 app = Flask(__name__)
+
+# ----- Functions ----- #
 
 
 @app.route('/api/domain', methods=["GET"])
@@ -30,14 +39,18 @@ def root_page():
 
     :return: The content of the page and the status code.
     """
-    environment = jinja2.Environment(
-        loader=jinja2.FileSystemLoader("templates"),
-        autoescape=jinja2.select_autoescape(["html", "xml"])
-    )
-    
-    root_template = environment.get_template("root.html")
-    return root_template.render(domain=domain_finder.find_domain())
+    root_template = app.jinja_env.get_template("root.html")
+    dark = not request.args.get("light", False, type=bool)
+    return root_template.render(domain=domain_finder.find_domain(), dark=dark)
+
+
+# ----- Main Entry Point ----- #
+
+
+def main():
+    app.create_jinja_environment()
+    app.run(host="0.0.0.0", port=80)
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=80)
+    main()
