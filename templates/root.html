@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ domain }} Doesn't Exists</title>
+    {% if dark %}<meta name="color-scheme" content="dark light">{% endif %}
+    <link rel="stylesheet" href="/static/root_style.css" >
+</head>
+<body>
+<div class="main">
+    <h1 class="title">Here is a non-existent domain:<br></h1>
+    <h2><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="blank" class="link">{{ domain }}</a><br></h2>
+    <h5 class="copyright">&copy; Shahar Melamed - 2021-{{ now().year }}</h5>
+</div>
+</body>
+</html>

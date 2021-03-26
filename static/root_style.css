@@ -1,0 +1,15 @@
+.title {
+    font-family: "SF Pro Text", Arial;
+}
+
+.link:visited {
+    color: blue !important;
+}
+
+.main {
+    text-align: center;
+}
+
+.copyright {
+    font-family: "SF Pro Text", Arial;
+}
